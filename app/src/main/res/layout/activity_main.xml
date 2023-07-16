@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:padding="16dp">
 
     <EditText
-        android:id="@+id/editTextSearch"
+        android:id="@+id/editTextIngredient"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter your search query..."
-        android:imeOptions="actionDone"
-        android:inputType="text"/>
+        android:hint="Enter ingredient..."/>
 
     <Button
-        android:id="@+id/buttonSearch"
+        android:id="@+id/addIngredientButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextSearch"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:text="Search on Naver"/>
+        android:text="Add Ingredient"/>
 
-</RelativeLayout>
+    <LinearLayout
+        android:id="@+id/ingredientListLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"/>
+
+</LinearLayout>
