@@ -1,28 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="16dp">
 
     <EditText
-        android:id="@+id/inputText"
+        android:id="@+id/editTextSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Type something..."
+        android:hint="Enter your search query..."
+        android:imeOptions="actionDone"
         android:inputType="text"/>
 
     <Button
-        android:id="@+id/submitButton"
+        android:id="@+id/buttonSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Submit"/>
+        android:layout_below="@id/editTextSearch"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Search on Naver"/>
 
-    <TextView
-        android:id="@+id/outputText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="16dp"/>
-
-</LinearLayout>
+</RelativeLayout>

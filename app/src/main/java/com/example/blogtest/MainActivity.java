@@ -1,36 +1,38 @@
 package com.example.blogtest;
-
 import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import java.util.Scanner;
-
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText inputText;
-    private Button submitButton;
-    private TextView outputText;
+    private EditText editTextSearch;
+    private Button buttonSearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        inputText = findViewById(R.id.inputText);
-        submitButton = findViewById(R.id.submitButton);
-        outputText = findViewById(R.id.outputText);
+        editTextSearch = findViewById(R.id.editTextSearch);
+        buttonSearch = findViewById(R.id.buttonSearch);
 
-        submitButton.setOnClickListener(new View.OnClickListener() {
+        buttonSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String userInput = inputText.getText().toString();
-                outputText.setText("You entered: " + userInput);
+                String query = editTextSearch.getText().toString().trim();
+                if (!query.isEmpty()) {
+                    performNaverSearch(query);
+                }
             }
         });
+    }
+
+    private void performNaverSearch(String query) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://search.naver.com/search.naver?query=" + Uri.encode(query)));
+        startActivity(intent);
     }
 }
